@@ -2,7 +2,7 @@ var ViewModel = function(){
   this.clickCount = ko.observable(0);
   this.name = ko.observable('Tabby');
   this.imgSrc = ko.observable('img/434164568_fea0ad4013_z.jpg');
-  this.imgAttribution = ko.observable('https:www.flikr.com');
+  this.nicknames = ko.observableArray(['Tabs', 'Lil T', '4 spaces', 'Tabby Tab Tab Tab', 'Tabbin'])
 
   this.incrementCounter = function() {
     this.clickCount(this.clickCount() + 1);
@@ -33,7 +33,7 @@ var ViewModel = function(){
     }
 
     return title;
-    
+
   }, this);
 
 

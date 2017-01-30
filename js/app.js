@@ -8,6 +8,35 @@ var ViewModel = function(){
     this.clickCount(this.clickCount() + 1);
   }
 
+  this.catLevel = ko.computed(function(){
+    console.log("The Cat Level is:")
+
+    var title;
+
+    var clicks = this.clickCount();
+
+    if (clicks < 0){
+      return title = 'New Born';
+      console.log("New Born")
+    }
+    else if (clicks < 10){
+      return title = 'Infant';
+    }
+    else if (clicks < 30){
+      return title = 'Teen';
+    }
+    else if (clicks < 100){
+      return title = 'That Cat is Grown';
+    }
+    else {
+      return title = 'That Cat is Really Really Old';
+    }
+
+    return title;
+    
+  }, this);
+
+
 }
 
 ko.applyBindings(new ViewModel());
